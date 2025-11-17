@@ -4,6 +4,7 @@
 
 # Attributes:
 #   suits: Tuple of all traditional suits found in a standard deck
+#   ranks: Tuple of all traditional ranks found in a standard deck
 #   suit: Suit of the card (eg/ Hearts, Diamonds, Clubs, Spades)
 #   rank: Rank of the card (eg/ 2 - 10, Jack = 11, Queen = 12, King = 13, Ace = 1)
 #   value: Value of Corresponding rank
