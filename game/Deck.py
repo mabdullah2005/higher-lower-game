@@ -36,17 +36,17 @@ class Deck:
     def createDeck(self):
         for x in self._suits:
             for y in range(1, 14):
-                self._cards.append(Card(self._rankEquivalent.get(y), x, y))
+                self._cards.append(Card(x, self._rankEquivalent.get(y), y))
         self.shuffle()
 
     def shuffle(self):
         random.shuffle(self._cards)
 
     def draw(self):
-        if(len(self._cards) > 0):
-            self._current = self._cards.pop()
-        else:
+        if(len(self._cards) == 0):
             self.createDeck()
+        
+        self._current = self._cards.pop()
 
     @property
     def current(self):

@@ -3,16 +3,18 @@
 #   Holds all logic of a singular card
 
 # Attributes:
+#   suits: Tuple of all traditional suits found in a standard deck
 #   suit: Suit of the card (eg/ Hearts, Diamonds, Clubs, Spades)
 #   rank: Rank of the card (eg/ 2 - 10, Jack = 11, Queen = 12, King = 13, Ace = 1)
 #   value: Value of Corresponding rank
 
 class Card:
+    _suits = ('Spades', 'Diamonds', 'Clubs', 'Hearts')
     _suit: str
     _rank: str 
     _value: int
 
-    def __init__(self, rank:str, suit:str, value: int):
+    def __init__(self, suit:str, rank:str, value: int):
         self._suit = suit
         self._rank = rank
         self._value = value
