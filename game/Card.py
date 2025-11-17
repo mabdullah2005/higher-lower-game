@@ -10,14 +10,37 @@
 
 class Card:
     _suits = ('Spades', 'Diamonds', 'Clubs', 'Hearts')
+    _ranks = (
+        'Ace',
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        'Jack',
+        'Queen',
+        'King'
+    )
+
     _suit: str
     _rank: str 
     _value: int
 
     def __init__(self, suit:str, rank:str, value: int):
-        self._suit = suit
-        self._rank = rank
-        self._value = value
+        if(suit not in self._suits):
+            raise ValueError("Must be suitable suit")
+        elif(rank not in self._ranks):
+            raise ValueError("Must be suitable rank")
+        elif(value > 13 or value < 1):
+            raise ValueError("Must be suitable value")
+        else:
+            self._suit = suit
+            self._rank = rank
+            self._value = value
 
     @property
     def suit(self):
