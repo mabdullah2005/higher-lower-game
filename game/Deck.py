@@ -1,4 +1,4 @@
-from Card import Card
+from .Card import Card
 import random
 
 # Name: Deck
@@ -31,9 +31,9 @@ class Deck:
     _current = None
 
     def __init__(self):
-        self.createDeck()
+        self.create_deck()
 
-    def createDeck(self):
+    def create_deck(self):
         for x in self._suits:
             for y in range(1, 14):
                 self._cards.append(Card(x, self._rankEquivalent.get(y), y))
@@ -51,3 +51,7 @@ class Deck:
     @property
     def current(self):
         return self._current
+    
+    @property
+    def cards(self):
+        return self._cards
