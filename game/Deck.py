@@ -43,12 +43,10 @@ class Deck:
         random.shuffle(self._cards)
 
     def draw(self):
-        print(f'Length of cards: {len(self.cards)}')
         if(len(self._cards) == 0):
             self.createDeck()
         
         self._current = self._cards.pop()
-        print(f'Length of Cards after: {len(self.cards)}')
 
     @property
     def current(self):
