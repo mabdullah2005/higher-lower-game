@@ -2,20 +2,28 @@
 # Description:
 #   Holds all logic of a singular player
 
-class Person:
+class Player:
     def __init__(self, name: str):
-        if len(name == 0):
-            raise ValueError("Name Must be a Non-Empty String")
+        if len(name) == 0:
+            raise ValueError("Player Must Have a Name")
         else:
             self._name = name
             self._score = 5
+            self._player_alive = True
     
     def increment(self):
-        self._score += 1
+        if(self._player_alive):
+            self._score += 1
     
     def decrement(self):
         if(self._score > 0):
             self._score -= 1
+    
+    def eliminate(self):
+        if(self.score == 0):
+            self._player_alive = False
+        
+        return self._player_alive
     
     @property
     def name(self):
@@ -24,6 +32,12 @@ class Person:
     @property
     def score(self):
         return self._score
+    
+    @property
+    def player_status(self):
+        if(self._player_alive):
+            return "Alive"
+        return "Eliminated"
 
     def __str__(self):
-        return f'Player: {self._name}, Score: {self._score}'
+        return f'Player: {self._name} ({self.player_status}), Score: {self._score}'
