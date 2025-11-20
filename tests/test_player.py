@@ -14,7 +14,7 @@ def test_player_string_at_start():
 
 def test_player_string_when_eliminated():
     player = Player("Abdullah")
-    while(player.eliminate()):
+    while(player.is_alive()):
         player.decrement()
 
     assert str(player) == "Player: Abdullah (Eliminated), Score: 0"

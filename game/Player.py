@@ -19,7 +19,7 @@ class Player:
         if(self._score > 0):
             self._score -= 1
     
-    def eliminate(self):
+    def is_alive(self):
         if(self.score == 0):
             self._player_alive = False
         

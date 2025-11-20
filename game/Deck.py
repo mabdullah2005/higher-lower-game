@@ -44,9 +44,10 @@ class Deck:
 
     def draw(self):
         if(len(self._cards) == 0):
-            self.createDeck()
+            self.create_deck()
         
         self._current = self._cards.pop()
+        return self._current
 
     @property
     def current(self):
