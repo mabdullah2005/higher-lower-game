@@ -5,12 +5,12 @@
 # Attributes:
 #   suits: Tuple of all traditional suits found in a standard deck
 #   ranks: Tuple of all traditional ranks found in a standard deck
-#   suit: Suit of the card (eg/ Hearts, Diamonds, Clubs, Spades)
+#   suit: Suit of the card (eg/ Hearts, Diamonds, Clubs, Spades, Jokers)
 #   rank: Rank of the card (eg/ 2 - 10, Jack = 11, Queen = 12, King = 13, Ace = 1)
 #   value: Value of Corresponding rank
 
 class Card:
-    _suits = ('Spades', 'Diamonds', 'Clubs', 'Hearts')
+    _suits = ('Spades', 'Diamonds', 'Clubs', 'Hearts', 'JOKER')
     _ranks = (
         'Ace',
         2,
@@ -24,7 +24,8 @@ class Card:
         10,
         'Jack',
         'Queen',
-        'King'
+        'King',
+        'JOKER'
     )
 
     _suit: str
@@ -56,4 +57,12 @@ class Card:
         return self._value
 
     def __str__(self):
+        if self.rank == 'JOKER':
+            result = ""
+            for letter in self.rank:
+                result += letter
+                print(result)
+            
+            return "JOKERRRRRRRRRRR"
+            
         return "{} of {}".format(self.rank, self.suit)   

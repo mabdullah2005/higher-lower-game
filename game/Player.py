@@ -18,8 +18,11 @@ class Player:
     def decrement(self):
         if(self._score > 0):
             self._score -= 1
+
+    def eliminate(self):
+        self._player_alive = False
     
-    def is_alive(self):
+    def check_alive(self):
         if(self.score == 0):
             self._player_alive = False
         
@@ -32,6 +35,10 @@ class Player:
     @property
     def score(self):
         return self._score
+    
+    @property
+    def player_alive(self):
+        return self._player_alive
     
     @property
     def player_status(self):

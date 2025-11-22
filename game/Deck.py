@@ -27,16 +27,22 @@ class Deck:
         12: 'Queen',
         13: 'King'
     }
-    _cards = []
     _current = None
 
     def __init__(self):
+        self._cards = []
         self.create_deck()
+        self.draw()
 
     def create_deck(self):
+        self.clear()
+
         for x in self._suits:
             for y in range(1, 14):
                 self._cards.append(Card(x, self._rankEquivalent.get(y), y))
+
+        self._cards.append(Card('JOKER', 'JOKER', 1))
+        self._cards.append(Card('JOKER', 'JOKER', 1))
         self.shuffle()
 
     def shuffle(self):
@@ -44,6 +50,7 @@ class Deck:
 
     def draw(self):
         if(len(self._cards) == 0):
+            print(f'\n\nYou have reached the end of the deck. Deck is being reshuffled...\n\n')
             self.create_deck()
         
         self._current = self._cards.pop()
