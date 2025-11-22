@@ -28,6 +28,8 @@ Ideas for Improvement:
 Game Overview:
     Each Player starts with 3 points. Players take turns in guessing whether the next card's value is higher or lower than the current card that was drawn. Players gain a point for correct guesses and lose a point for guessing incorrectly. Players are eliminated if they reach 0 points or if they draw a Joker. Last Player Standing Wins.
 
+
+
 *INSTRUCTIONS ON RUNNING THE GAME AND TESTS*
 
 To play the game, Run main.py in any IDE that supports a Python Environment:
